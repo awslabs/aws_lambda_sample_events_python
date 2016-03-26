@@ -9,4 +9,5 @@ setup(name='lambda_sample_events',
       license='Apache 2.0',
       packages=['lambda_sample_events'],
       include_package_data=True,
+      tests_require=['pytest'],
       zip_safe=False)

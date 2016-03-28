@@ -7,8 +7,8 @@
 ## Codepipeline
 ### Create a standard Codepipeline event
 ```python
-import lambda_sample_events
+from lambda_sample_events import SampleEvent
 from pprint import pprint
-codepipeline = lambda_sample_events.Codepipeline()
+codepipeline = SampleEvent('codepipeline')
 pprint(codepipeline.event)
 ```

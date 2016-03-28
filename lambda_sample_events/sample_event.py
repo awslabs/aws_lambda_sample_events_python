@@ -5,7 +5,7 @@ import json
 import pkg_resources
 from unknown_service_error import UnknownServiceError
 
-SERVICES = 'codepipeline'
+SERVICES = 'codepipeline, sns'
 
 class SampleEvent(object):
     """
@@ -22,4 +22,11 @@ class SampleEvent(object):
         """ Loads Codepipeline sample JSON event """
         data_file = open(pkg_resources.resource_filename(
             "lambda_sample_events", "json_samples/codepipeline.json"))
+        return json.load(data_file)
+
+    @staticmethod
+    def sns():
+        """ Loads SNS sample JSON event """
+        data_file = open(pkg_resources.resource_filename(
+            "lambda_sample_events", "json_samples/sns.json"))
         return json.load(data_file)

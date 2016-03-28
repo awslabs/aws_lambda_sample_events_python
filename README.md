@@ -2,13 +2,13 @@
 [ ![Codeship Status for irlrobot/python_lambda_sample_events](https://codeship.com/projects/938444a0-d5be-0133-1313-7edf9ccff8c4/status?branch=master)](https://codeship.com/projects/142651)
 # Python module for creating sample events to test AWS Lambda functions.
 
-# Usage
+# Supported Services
+* Codepipeline
 
-## Codepipeline
-### Create a standard Codepipeline event
+# Usage Example
 ```python
-import lambda_sample_events
+from lambda_sample_events import SampleEvent
 from pprint import pprint
-codepipeline = lambda_sample_events.Codepipeline()
+codepipeline = SampleEvent('codepipeline')
 pprint(codepipeline.event)
 ```

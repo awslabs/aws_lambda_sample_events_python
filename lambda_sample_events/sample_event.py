@@ -1,32 +1,29 @@
 """
-Generates a sample event for the given service name
+The module will generate an "event" that appears to come from a specified
+service which can be used to simulate an actual invocation of a Lambda function.
 """
 import json
 import pkg_resources
 from unknown_service_error import UnknownServiceError
 
-SERVICES = 'codepipeline, sns'
+SERVICES = ['codepipeline', 'sns']
 
 class SampleEvent(object):
-    """
-    Client for sample events
-    """
+    """ Generates a sample event for the given service name """
     def __init__(self, service_name):
-        try:
-            self.event = getattr(SampleEvent, service_name)()
-        except AttributeError:
-            raise UnknownServiceError('Valid Services are: ' + SERVICES)
+        self.event = SampleEvent.load_event(service_name)
 
     @staticmethod
-    def codepipeline():
-        """ Loads Codepipeline sample JSON event """
+    def load_event(service_name):
+        """ Loads a sample JSON event for the specified service """
+        SampleEvent.validate_service_name(service_name)
+        filename = 'json_samples/' + service_name + '.json'
         data_file = open(pkg_resources.resource_filename(
-            "lambda_sample_events", "json_samples/codepipeline.json"))
+            "lambda_sample_events", filename))
         return json.load(data_file)
 
     @staticmethod
-    def sns():
-        """ Loads SNS sample JSON event """
-        data_file = open(pkg_resources.resource_filename(
-            "lambda_sample_events", "json_samples/sns.json"))
-        return json.load(data_file)
+    def validate_service_name(service_name):
+        """ Validates the specified service name is supported """
+        if not service_name in SERVICES:
+            raise UnknownServiceError('Valid Services are: ' + str(SERVICES))

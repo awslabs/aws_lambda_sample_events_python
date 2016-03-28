@@ -18,3 +18,9 @@ def test_codepipeline():
     codepipeline = SampleEvent('codepipeline')
     json_event = json.load(open(JSON_SAMPLES + 'codepipeline.json'))
     assert codepipeline.event == json_event
+
+def test_sns():
+    """ Tests SNS """
+    codepipeline = SampleEvent('sns')
+    json_event = json.load(open(JSON_SAMPLES + 'sns.json'))
+    assert codepipeline.event == json_event

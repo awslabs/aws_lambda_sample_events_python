@@ -2,9 +2,6 @@
 [ ![Codeship Status for irlrobot/python_lambda_sample_events](https://codeship.com/projects/938444a0-d5be-0133-1313-7edf9ccff8c4/status?branch=master)](https://codeship.com/projects/142651)
 # Python module for creating sample events to test AWS Lambda functions.
 
-# Supported Services
-* Codepipeline
-
 # Usage Example
 ```python
 from lambda_sample_events import SampleEvent
@@ -12,3 +9,8 @@ from pprint import pprint
 codepipeline = SampleEvent('codepipeline')
 pprint(codepipeline.event)
 ```
+`SampleEvent()` expects a single string argument representing the name of the AWS Service you would like a sample event for.  
+
+## Valid arguments, and supported services, are:
+* codepipeline
+* sns

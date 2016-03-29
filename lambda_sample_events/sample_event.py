@@ -23,7 +23,18 @@ SERVICES = [
 ]
 
 class SampleEvent(object):
-    """ Generates a sample event for the given service name """
+    """
+    Generates a sample event for the given service name
+
+    Args:
+        service_name (str): The name of a supported service.  See README.md.
+
+    Attributes:
+        event (str): Returns a JSON event for the specified service.
+
+    Raises:
+        UnknownServiceError: An unsupported service name was used.  See README.md.
+    """
     def __init__(self, service_name):
         self.event = SampleEvent.load_event(service_name)
 

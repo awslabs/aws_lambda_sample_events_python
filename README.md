@@ -15,3 +15,12 @@ pprint(codepipeline.event)
 ## Valid arguments, and supported services, are:
 * codepipeline
 * sns
+* cloudformation
+* ses
+* scheduled
+* dynamodb_update
+* cognito_sync_trigger
+* kinesis_stream
+* s3_put
+* s3_delete
+* cloudwatch_logs

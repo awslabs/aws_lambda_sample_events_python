@@ -18,7 +18,9 @@ SERVICES = [
     'kinesis_stream',
     's3_put',
     's3_delete',
-    'cloudwatch_logs'
+    'cloudwatch_logs',
+    'cloudwatch_events',
+    'config_rule'
 ]
 
 def test_invalid_service_name():

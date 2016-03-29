@@ -6,7 +6,19 @@ import json
 import pkg_resources
 from unknown_service_error import UnknownServiceError
 
-SERVICES = ['codepipeline', 'sns']
+SERVICES = [
+    'codepipeline',
+    'sns',
+    'cloudformation',
+    'ses',
+    'scheduled',
+    'dynamodb_update',
+    'cognito_sync_trigger',
+    'kinesis_stream',
+    's3_put',
+    's3_delete',
+    'cloudwatch_logs'
+]
 
 class SampleEvent(object):
     """ Generates a sample event for the given service name """

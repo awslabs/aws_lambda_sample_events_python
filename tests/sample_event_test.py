@@ -1,5 +1,5 @@
 """
-Unit Tests for Codepipeline class
+Unit Tests for SampleEvent class
 """
 import json
 import pytest

@@ -24,3 +24,7 @@ pprint(codepipeline.event)
 * s3_put
 * s3_delete
 * cloudwatch_logs
+
+# References
+[AWS Lambda Event Sources](http://docs.aws.amazon.com/lambda/latest/dg/eventsources.html)
+[AWS ARNs](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)

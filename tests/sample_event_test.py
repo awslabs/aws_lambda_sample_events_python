@@ -3,10 +3,10 @@ Unit Tests for SampleEvent class
 """
 import json
 import pytest
-from lambda_sample_events import SampleEvent
-from lambda_sample_events.unknown_service_error import UnknownServiceError
+from aws_lambda_sample_events import SampleEvent
+from aws_lambda_sample_events.unknown_service_error import UnknownServiceError
 
-JSON_SAMPLES = 'lambda_sample_events/json_samples/'
+JSON_SAMPLES = 'aws_lambda_sample_events/json_samples/'
 SERVICES = [
     'codepipeline',
     'sns',

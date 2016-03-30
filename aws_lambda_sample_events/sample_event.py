@@ -4,7 +4,7 @@ service which can be used to simulate an actual invocation of a Lambda function.
 """
 import json
 import pkg_resources
-from unknown_service_error import UnknownServiceError
+from aws_lambda_sample_events.unknown_service_error import UnknownServiceError
 
 SERVICES = [
     'codepipeline',
@@ -44,7 +44,7 @@ class SampleEvent(object):
         SampleEvent.validate_service_name(service_name)
         filename = 'json_samples/' + service_name + '.json'
         data_file = open(pkg_resources.resource_filename(
-            "lambda_sample_events", filename))
+            "aws_lambda_sample_events", filename))
         return json.load(data_file)
 
     @staticmethod

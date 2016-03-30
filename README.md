@@ -1,4 +1,4 @@
-# Python module for creating sample events to test AWS Lambda functions.
+# A Python module for creating sample events to test AWS Lambda functions.
 This small module is meant to help test Python based [AWS Lambda](https://aws.amazon.com/lambda/) functions that get triggered by other AWS services (ex: CodePipeline action).  The module will generate an "event" that appears to come from a specified service which can be used to simulate an actual invocation of the function.
 
 # Installation
